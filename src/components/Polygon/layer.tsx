@@ -72,6 +72,7 @@ export const PolygonLayer = ({
 
   const handleAnimatedValue: Animated.ValueListenerCallback = ({value}) => {
     if (length.current > 0) {
+      console.log(length.current, value);
       setScorePoles(
         coordinateScorePoles({
           array: finalizePole(rawPolesRef.current),
