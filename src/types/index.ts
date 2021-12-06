@@ -19,13 +19,13 @@ export interface IPole {
 }
 
 export interface IChartProps {
-  poles: Array<IPole>;
+  animation?: IAnimationParams;
   innerColor?: string;
   innerOpacity?: number;
   outerStroke?: ILineProps;
+  poles: Array<IPole>;
   style?: ViewStyle;
-  type?: PolygonType;
-  animation?: IAnimationParams;
+  type: PolygonType;
 }
 
 export interface IAnimationParams {

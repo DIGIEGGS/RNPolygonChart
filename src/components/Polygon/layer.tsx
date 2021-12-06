@@ -147,6 +147,7 @@ export const PolygonLayer = ({
       scorePoles={length.current > 0 ? scorePoles : []}
       onLayout={onLayout}
       poles={rawPolesRef.current}
+      type="triangle"
     />
   );
 };
