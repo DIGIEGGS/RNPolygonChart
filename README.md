@@ -51,7 +51,7 @@ import {
     <Triangle poles={[{score: 1}, {score: 0.5}, {score: 1}]} style={styles.triangle} />
 ```
 
-You can use more poles for other polygons or they will render as if remaining scores are zero.
+You can use more poles for other polygons or polygon will render as if remaining scores are zero.
 
 ![polygon initial](https://user-images.githubusercontent.com/89466000/144827429-21307cf6-bc36-457b-ad71-227fa6e21fc1.gif)
 
