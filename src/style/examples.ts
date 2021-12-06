@@ -2,6 +2,7 @@ import { IChartProps } from '../types';
 import { blue, green } from './colors';
 
 export const triangle: IChartProps = {
+  type: 'triangle',
   poles: [
     {
       score: 0.8,
@@ -26,6 +27,7 @@ export const triangle: IChartProps = {
 };
 
 export const tetragon: IChartProps = {
+  type: 'tetragon',
   poles: [
     {
       score: 0.7,
@@ -55,6 +57,7 @@ export const tetragon: IChartProps = {
 };
 
 export const pentagon: IChartProps = {
+  type: 'pentagon',
   poles: [
     {
       score: 0.7,
@@ -89,6 +92,7 @@ export const pentagon: IChartProps = {
 };
 
 export const hexagon: IChartProps = {
+  type: 'hexagon',
   poles: [
     {
       score: 0.7,

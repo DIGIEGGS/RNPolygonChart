@@ -49,9 +49,37 @@ import {
 
 ```javascript
 <Triangle
-  poles={[{score: 1}, {score: 0.5}, {score: 1}]}
+  type= 'triangle'
+  poles= {[
+    {
+      score: 0.8,
+      innerStroke: {opacity: 1, stroke: "#30d158", strokeWidth: 2},
+      stroke: {opacity: 1, stroke: "#0a84ff"},
+    },
+    {
+      score: 0.6,
+      innerStroke: {opacity: 1, stroke: "#30d158", strokeWidth: 2},
+      stroke: {opacity: 1, stroke: "#0a84ff"},
+    },
+    {
+      score: 0.9,
+      innerStroke: {opacity: 1, stroke: "#30d158", strokeWidth: 2},
+      stroke: {opacity: 1, stroke: "#0a84ff"},
+    },
+  ]}
+  innerColor="#30d158"
+  innerOpacity={0.2}
+  outerStroke={{stroke: green, opacity: 1, strokeWidth: 1}}
+  animation={{delay: 0, duration: 500}}
   style={styles.triangle}
 />
+
+...
+
+const styles = StyleSheet.create({
+  triangle: {width: 300, height: 600},
+});
+
 ```
 
 You can use more poles for other polygons or polygon will render as if remaining scores are zero.
