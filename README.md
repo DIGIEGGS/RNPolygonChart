@@ -47,8 +47,11 @@ import {
 
 #### Usage
 
-```
-    <Triangle poles={[{score: 1}, {score: 0.5}, {score: 1}]} style={styles.triangle} />
+```javascript
+<Triangle
+  poles={[{score: 1}, {score: 0.5}, {score: 1}]}
+  style={styles.triangle}
+/>
 ```
 
 You can use more poles for other polygons or polygon will render as if remaining scores are zero.
