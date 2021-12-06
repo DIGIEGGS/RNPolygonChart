@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Hexagon, Pentagon, Tetragon, Triangle } from './src';
 import Button from './src/components/Button';
-import { Hexagon } from './src/components/Hexagon';
-import { Pentagon } from './src/components/Pentagon';
-import { Tetragon } from './src/components/Tetragon';
-import { Triangle } from './src/components/Triangle';
-import { black } from './src/style/colors';
 import { hexagon, pentagon, tetragon, triangle } from './src/style/examples';
 import { PolygonType } from './src/types';
 
