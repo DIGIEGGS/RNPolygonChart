@@ -67,7 +67,7 @@
     "skill",
     "svg"
   ],
-  "author": "Abdullah Tanrıverdi",
+  "author": "Abdullah Tanrıverdi <https://github.com/loneddonkey>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/DIGIEGGS/RNPolygonChart/issues"
