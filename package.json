@@ -1,13 +1,18 @@
 {
-  "name": "rnpolygonchart",
+  "name": "react-native-polygon-chart",
   "version": "0.0.1",
+  "main": "lib/module/index.js",
+  "module": "lib/module/index.js",
+  "react-native": "src/index.ts",
   "private": true,
+  "types": "lib/typescript/index.d.ts",
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "prepare": "bob build"
   },
   "dependencies": {
     "react": "17.0.2",
@@ -25,8 +30,12 @@
     "eslint": "^7.14.0",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "^0.66.2",
+    "react-native-builder-bob": "^0.18.2",
     "react-test-renderer": "17.0.2",
     "typescript": "^4.4.4"
+  },
+  "peerDependencies": {
+    "react-native-svg": "^12.1.1"
   },
   "resolutions": {
     "@types/react": "^17"
@@ -41,5 +50,27 @@
       "json",
       "node"
     ]
-  }
+  },
+  "description": "Customizable and animatable polygon chart.",
+  "files": [
+    "lib/",
+    "src/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DIGIEGGS/RNPolygonChart.git"
+  },
+  "keywords": [
+    "chart",
+    "graph",
+    "polygon",
+    "skill",
+    "svg"
+  ],
+  "author": "Abdullah Tanrıverdi <https://github.com/loneddonkey>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DIGIEGGS/RNPolygonChart/issues"
+  },
+  "homepage": "https://github.com/DIGIEGGS/RNPolygonChart#readme"
 }
