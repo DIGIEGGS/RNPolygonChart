@@ -4,11 +4,9 @@ Customizable and animatable polygon chart.
 
 ## Getting started
 
-#### Installation
+- This component is not supported in the managed workflow for expo for the time being.
 
-## For Managed Workflow users using Expo
-
-This component is not supported in the managed workflow for expo for the time being.
+## Installation
 
 ```
 npm install react-native-svg react-native-polygon-chart
