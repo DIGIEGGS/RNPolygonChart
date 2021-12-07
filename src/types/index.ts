@@ -1,4 +1,4 @@
-import { Animated, EasingFunction, EasingStatic, ViewStyle } from 'react-native';
+import { Animated, EasingFunction, ViewStyle } from 'react-native';
 
 export interface ICoordinate {
   x: number;
@@ -10,6 +10,8 @@ export interface ILineProps {
   strokeWidth?: number;
   opacity?: number;
 }
+
+export interface IInfo {}
 
 export interface IPole {
   score: number;
@@ -25,6 +27,9 @@ export interface IChartProps {
   outerStroke?: ILineProps;
   poles: Array<IPole>;
   style?: ViewStyle;
+}
+
+export interface IPolygonLayerProps extends IChartProps {
   type: PolygonType;
 }
 
@@ -42,7 +47,7 @@ export interface IFinalPoleResult extends IPole {
   end?: ICoordinate;
 }
 
-export interface IPolygonProps extends IChartProps {
+export interface IPolygonProps extends IPolygonLayerProps {
   onLayout: (length: number) => () => void;
   guidePoles: Array<IFinalPoleResult>;
   scorePoles: Array<IFinalPoleResult>;

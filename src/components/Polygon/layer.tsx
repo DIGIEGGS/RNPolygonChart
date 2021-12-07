@@ -15,7 +15,7 @@ import {
 } from '../../functions/triangle';
 import { finalizePole } from '../../functions/utility';
 import {
-    IChartProps, ICoordinatePoleArgs, ICoordinateScoreArgs, IFinalPoleResult
+    IChartProps, ICoordinatePoleArgs, ICoordinateScoreArgs, IFinalPoleResult, IPolygonLayerProps
 } from '../../types';
 import Polygon from './';
 
@@ -24,7 +24,7 @@ export const PolygonLayer = ({
   type,
   animation: animationParams,
   ...rest
-}: IChartProps) => {
+}: IPolygonLayerProps) => {
   const [guidePoles, setGuidePoles] =
     useState<Array<IFinalPoleResult>>(rawPoles);
   const [scorePoles, setScorePoles] =

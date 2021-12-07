@@ -49,7 +49,6 @@ import {
 
 ```javascript
 <Triangle
-  type= 'triangle'
   poles= {[
     {
       score: 0.8,
@@ -94,7 +93,6 @@ You can use more poles for other polygons or polygon will render as if remaining
 - [`outerStroke`](#outerStroke)
 - [`poles`](#poles)
 - [`style`](#style)
-- [`type`](#type)
 
 ### `animation`
 
@@ -144,12 +142,6 @@ You can use more poles for other polygons or polygon will render as if remaining
 
 ---
 
-### `type`
-
-| Type                          | Required | Description          |
-| ----------------------------- | -------- | -------------------- |
-| [`PolygonType`](#PolygonType) | yes      | Type of the polygon. |
-
 ## Essential types and interfaces
 
 ### `ILineProps`
@@ -184,10 +176,3 @@ You can use more poles for other polygons or polygon will render as if remaining
 | `delay`    | `number`         | no       |
 | `duration` | `number`         | no       |
 | `easing`   | `EasingFunction` | no       |
-
----
-
-### `PolygonType`
-
-| `triangle` | `tetragon` | `pentagon` | `hexagon` |
-| ---------- | ---------- | ---------- | --------- |
