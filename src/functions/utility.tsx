@@ -2,11 +2,11 @@ import React from 'react';
 import { LayoutChangeEvent } from 'react-native';
 import { Line } from 'react-native-svg';
 import { black } from '../style/colors';
-import { IFinalPoleResult, IPole, PoleType } from '../types';
+import { ICoordinate, IFinalPoleResult, IPole, PoleType } from '../types';
 
 export const useLayout = (
   event: LayoutChangeEvent,
-  callback: (value: number) => void,
+  callback: (value: number, offset: ICoordinate) => void,
 ) => {
   const viewMeasure = event.nativeEvent.layout;
   const array = [viewMeasure?.width ?? 0, viewMeasure?.height ?? 0].filter(
@@ -15,7 +15,10 @@ export const useLayout = (
 
   let len = array.length > 0 ? Math.min(...array) : 0;
 
-  callback(len / 2);
+  callback(len / 2, {
+    x: (viewMeasure.width - len) / 2,
+    y: (viewMeasure.height - len) / 2,
+  });
 };
 
 export const finalizePole = (poles: Array<IPole>): Array<IPole> => {

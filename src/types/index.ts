@@ -1,4 +1,4 @@
-import { Animated, EasingFunction, ViewStyle } from 'react-native';
+import { Animated, EasingFunction, TextStyle, ViewStyle } from 'react-native';
 
 export interface ICoordinate {
   x: number;
@@ -11,13 +11,18 @@ export interface ILineProps {
   opacity?: number;
 }
 
-export interface IInfo {}
+export interface IInfo {
+  text?: string;
+  textStyle?: TextStyle;
+  style?: ViewStyle;
+  onPress?: () => void;
+}
 
 export interface IPole {
   score: number;
-  text?: string;
   stroke?: ILineProps;
   innerStroke?: ILineProps;
+  info?: IInfo;
 }
 
 export interface IChartProps {
@@ -69,4 +74,11 @@ export type PoleType = 'guide' | 'score';
 export interface IButtonProps {
   onClick: () => void;
   type: PolygonType;
+}
+
+export interface IInfoStyleProps {
+  size: number;
+  infoCoordinates: ICoordinate;
+  infoTextOffset: ICoordinate;
+  infoTextSize: ICoordinate;
 }

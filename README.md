@@ -158,14 +158,25 @@ You can use more poles for other polygons or polygon will render as if remaining
 
 ### `IPole`
 
-| Props         | Type         | Required |
-| ------------- | ------------ | -------- |
-| `score`       | `number`     | yes      |
-| `text`        | `string`     | no       |
-| `stroke`      | `ILineProps` | no       |
-| `innerStroke` | `ILineProps` | no       |
+| Props         | Type              | Required |
+| ------------- | ----------------- | -------- |
+| `score`       | `number`          | yes      |
+| `info`        | [`IInfo`](#IInfo) | no       |
+| `stroke`      | `ILineProps`      | no       |
+| `innerStroke` | `ILineProps`      | no       |
 
 - The `point` prop is a multiplier between 0 and 1 determines the vertex distance from the center of the polygon.
+
+---
+
+### `IInfo`
+
+| Props       | Type         | Required |
+| ----------- | ------------ | -------- |
+| `text`      | `string`     | no       |
+| `textStyle` | `TextStyle`  | no       |
+| `style`     | `ViewStyle`  | no       |
+| `onPress`   | `() => void` | no       |
 
 ---
 
