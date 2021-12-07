@@ -1,7 +1,8 @@
-import { IChartProps } from '../types';
+import { IPolygonLayerProps } from '../types';
 import { blue, green } from './colors';
 
-export const triangle: IChartProps = {
+export const triangle: IPolygonLayerProps = {
+  type: 'triangle',
   poles: [
     {
       score: 0.8,
@@ -25,7 +26,8 @@ export const triangle: IChartProps = {
   animation: {delay: 0, duration: 500},
 };
 
-export const tetragon: IChartProps = {
+export const tetragon: IPolygonLayerProps = {
+  type: 'tetragon',
   poles: [
     {
       score: 0.7,
@@ -54,7 +56,8 @@ export const tetragon: IChartProps = {
   animation: {delay: 0, duration: 500},
 };
 
-export const pentagon: IChartProps = {
+export const pentagon: IPolygonLayerProps = {
+  type: 'pentagon',
   poles: [
     {
       score: 0.7,
@@ -88,7 +91,8 @@ export const pentagon: IChartProps = {
   animation: {delay: 0, duration: 500},
 };
 
-export const hexagon: IChartProps = {
+export const hexagon: IPolygonLayerProps = {
+  type: 'hexagon',
   poles: [
     {
       score: 0.7,

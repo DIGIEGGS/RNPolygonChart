@@ -49,12 +49,18 @@
       "jsx",
       "json",
       "node"
+    ],
+    "modulePathIgnorePatterns": [
+      "<rootDir>/lib/"
     ]
   },
   "description": "Customizable and animatable polygon chart.",
   "files": [
-    "lib/",
-    "src/"
+    "src",
+    "lib",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
   ],
   "repository": {
     "type": "git",
@@ -72,5 +78,18 @@
   "bugs": {
     "url": "https://github.com/DIGIEGGS/RNPolygonChart/issues"
   },
-  "homepage": "https://github.com/DIGIEGGS/RNPolygonChart#readme"
+  "homepage": "https://github.com/DIGIEGGS/RNPolygonChart#readme",
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      "typescript"
+    ]
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/"
+  ]
 }
