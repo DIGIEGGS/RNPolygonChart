@@ -173,7 +173,7 @@ You can use more poles for other polygons or polygon will render as if remaining
 
 | Props       | Type                        | Required |
 | ----------- | --------------------------- | -------- |
-| `text`      | `string &#124; JSX.Element` | no       |
+| `text`      | `string <code>&#124;</code> JSX.Element` | no       |
 | `textStyle` | `TextStyle`                 | no       |
 | `style`     | `ViewStyle`                 | no       |
 | `onPress`   | `() => void`                | no       |
