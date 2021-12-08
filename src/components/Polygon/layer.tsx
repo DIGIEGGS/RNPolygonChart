@@ -15,7 +15,7 @@ import {
 } from '../../functions/triangle';
 import { finalizePole } from '../../functions/utility';
 import {
-    IChartProps, ICoordinatePoleArgs, ICoordinateScoreArgs, IFinalPoleResult, IPolygonLayerProps
+    ICoordinatePoleArgs, ICoordinateScoreArgs, IFinalPoleResult, IPolygonLayerProps
 } from '../../types';
 import Polygon from './';
 

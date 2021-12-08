@@ -1,4 +1,4 @@
-import { ICoordinatePoleArgs, ICoordinateScoreArgs, IFinalPoleResult, IPole } from '../types';
+import { ICoordinatePoleArgs, ICoordinateScoreArgs, IFinalPoleResult } from '../types';
 import { cos, sin } from './utility';
 
 export const coordinateGuidePoles = ({

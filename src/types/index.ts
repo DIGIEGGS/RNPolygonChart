@@ -12,9 +12,10 @@ export interface ILineProps {
 }
 
 export interface IInfo {
-  text?: string;
+  text?: string | JSX.Element;
   textStyle?: TextStyle;
   style?: ViewStyle;
+  offset?: IOffset;
   onPress?: () => void;
 }
 
@@ -76,9 +77,8 @@ export interface IButtonProps {
   type: PolygonType;
 }
 
-export interface IInfoStyleProps {
-  size: number;
-  infoCoordinates: ICoordinate;
-  infoTextOffset: ICoordinate;
-  infoTextSize: ICoordinate;
+export interface IOffset extends ICoordinate {}
+
+export interface IInfoLayout extends IFinalPoleResult {
+  offset?: IOffset;
 }

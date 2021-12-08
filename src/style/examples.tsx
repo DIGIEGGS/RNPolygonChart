@@ -1,5 +1,6 @@
-import { Alert } from 'react-native';
-import { IInfoStyleProps, IPolygonLayerProps } from '../types';
+import React from 'react';
+import { Alert, Text } from 'react-native';
+import { IPolygonLayerProps } from '../types';
 import { black, blue, green, pink } from './colors';
 
 export const triangle: IPolygonLayerProps = {
@@ -99,7 +100,7 @@ export const hexagon: IPolygonLayerProps = {
       score: 0.7,
       innerStroke: {opacity: 1, stroke: green, strokeWidth: 2},
       stroke: {opacity: 1, stroke: blue},
-      info: {text: 'First'},
+      info: {text: <Text>First (JSX element)</Text>},
     },
     {
       score: 0.6,
@@ -116,7 +117,7 @@ export const hexagon: IPolygonLayerProps = {
           paddingHorizontal: 10,
           position: 'absolute',
         },
-        onPress: () => Alert.alert('Sixth info item pressed.'),
+        onPress: () => Alert.alert('Second info item pressed.'),
       },
     },
     {
@@ -141,18 +142,14 @@ export const hexagon: IPolygonLayerProps = {
       score: 1,
       innerStroke: {opacity: 1, stroke: green, strokeWidth: 2},
       stroke: {opacity: 1, stroke: blue},
-      info: {text: 'Sixth'},
+      info: {
+        text: 'Sixth (x: -100, y: -10)',
+        offset: {x: -100, y: -10},
+      },
     },
   ],
   innerColor: green,
   innerOpacity: 0.2,
   outerStroke: {stroke: green, opacity: 1, strokeWidth: 1},
   animation: {delay: 0, duration: 500},
-};
-
-export const initialInfoStyleProps: IInfoStyleProps = {
-  infoCoordinates: {x: 0, y: 0},
-  infoTextOffset: {x: 0, y: 0},
-  infoTextSize: {x: 0, y: 0},
-  size: 0,
 };

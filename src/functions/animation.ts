@@ -1,5 +1,5 @@
 import { Animated, Easing, Platform } from 'react-native';
-import { IAnimationProps, IPole } from '../types';
+import { IAnimationProps } from '../types';
 
 export const useAnimation = ({
   duration,
