@@ -1,4 +1,4 @@
-import { Animated, EasingFunction, TextStyle, ViewStyle } from 'react-native';
+import { Animated, EasingFunction, LayoutChangeEvent, TextStyle, ViewStyle } from 'react-native';
 
 export interface ICoordinate {
   x: number;
@@ -35,7 +35,7 @@ export interface IChartProps {
   style?: ViewStyle;
 }
 
-export interface IPolygonLayerProps extends IChartProps {
+export interface IGenericChartProps extends IChartProps {
   type: PolygonType;
 }
 
@@ -51,12 +51,6 @@ export interface IAnimationProps extends IAnimationParams {
 
 export interface IFinalPoleResult extends IPole {
   end?: ICoordinate;
-}
-
-export interface IPolygonProps extends IPolygonLayerProps {
-  onLayout: (length: number) => () => void;
-  guidePoles: Array<IFinalPoleResult>;
-  scorePoles: Array<IFinalPoleResult>;
 }
 
 export type PolygonType = 'triangle' | 'tetragon' | 'pentagon' | 'hexagon';
@@ -81,4 +75,10 @@ export interface IOffset extends ICoordinate {}
 
 export interface IInfoLayout extends IFinalPoleResult {
   offset?: IOffset;
+}
+
+export interface IUseComponentSizeResult {
+  size?: number;
+  offset?: IOffset;
+  onLayout: (event: LayoutChangeEvent) => void;
 }

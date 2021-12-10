@@ -150,7 +150,7 @@ You can use more poles for other polygons or polygon will render as if remaining
 | ------------- | -------- | -------- |
 | `stroke`      | `string` | no       |
 | `strokeWidth` | `number` | no       |
-| `opacity `    | `string` | no       |
+| `opacity `    | `number` | no       |
 
 - The `stroke` prop is being used for line color.
 
@@ -171,13 +171,13 @@ You can use more poles for other polygons or polygon will render as if remaining
 
 ### `IInfo`
 
-| Props       | Type                        | Required |
-| ----------- | --------------------------- | -------- |
+| Props       | Type                          | Required |
+| ----------- | ----------------------------- | -------- |
 | `text`      | `string` &#124; `JSX.Element` | no       |
-| `textStyle` | `TextStyle`                 | no       |
-| `style`     | `ViewStyle`                 | no       |
-| `onPress`   | `() => void`                | no       |
-| `offset`    | [`IOffset`](#IOffset)       | no       |
+| `textStyle` | `TextStyle`                   | no       |
+| `style`     | `ViewStyle`                   | no       |
+| `onPress`   | `() => void`                  | no       |
+| `offset`    | [`IOffset`](#IOffset)         | no       |
 
 - The `offset` prop determines the absolute x and y offsets of info element.
 

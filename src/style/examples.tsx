@@ -1,10 +1,9 @@
 import React from 'react';
 import { Alert, Text } from 'react-native';
-import { IPolygonLayerProps } from '../types';
+import { IChartProps } from '../types';
 import { black, blue, green, pink } from './colors';
 
-export const triangle: IPolygonLayerProps = {
-  type: 'triangle',
+export const triangle: IChartProps = {
   poles: [
     {
       score: 0.8,
@@ -28,8 +27,7 @@ export const triangle: IPolygonLayerProps = {
   animation: {delay: 0, duration: 500},
 };
 
-export const tetragon: IPolygonLayerProps = {
-  type: 'tetragon',
+export const tetragon: IChartProps = {
   poles: [
     {
       score: 0.7,
@@ -58,8 +56,7 @@ export const tetragon: IPolygonLayerProps = {
   animation: {delay: 0, duration: 500},
 };
 
-export const pentagon: IPolygonLayerProps = {
-  type: 'pentagon',
+export const pentagon: IChartProps = {
   poles: [
     {
       score: 0.7,
@@ -93,8 +90,7 @@ export const pentagon: IPolygonLayerProps = {
   animation: {delay: 0, duration: 500},
 };
 
-export const hexagon: IPolygonLayerProps = {
-  type: 'hexagon',
+export const hexagon: IChartProps = {
   poles: [
     {
       score: 0.7,

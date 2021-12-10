@@ -1,11 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { View } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { Animated, View } from 'react-native';
 import Svg, { Polygon as SVGPolygon } from 'react-native-svg';
+import { useAnimation } from '../../functions/animation';
 import {
-    generateInfo, generateLines, generatePolygonPoints, useLayout
+    generateInfo, generateLines, generatePolygonPoints, useComponentSize, useCoordinateGuidePoles,
+    useCoordinateScorePoles
 } from '../../functions/utility';
 import { black } from '../../style/colors';
-import { ICoordinate, IPolygonProps } from '../../types';
+import { IGenericChartProps } from '../../types';
 import useStyles from './styles';
 
 export default function Polygon({
@@ -13,46 +15,61 @@ export default function Polygon({
   innerOpacity,
   outerStroke,
   style,
-  onLayout,
-  guidePoles,
-  scorePoles,
-}: IPolygonProps) {
-  const length = useRef<number>(0);
-  const offset = useRef<ICoordinate>({x: 0, y: 0});
-  const styles = useStyles(length.current);
-  const useForceUpdate = () => {
-    const [, setState] = useState<{}>();
-    return () => setState({});
-  };
-  const forceUpdate = useForceUpdate();
+  poles,
+  animation: animationInput,
+  type,
+}: IGenericChartProps) {
+  const {size, offset, onLayout} = useComponentSize();
+  const styles = useStyles(size);
+  const [multiplier, setMultiplier] = useState<number>(0);
+  const [animValue, setAnimValue] = useState<Animated.Value>(
+    new Animated.Value(0),
+  );
+  const animation =
+    animationInput && useAnimation({...animationInput, value: animValue});
 
-  useEffect(() => onLayout(length.current), [length.current]);
+  useEffect(() => {
+    if (size) {
+      animValue.addListener(({value}) => setMultiplier(value));
+      animation?.start();
+    }
 
-  useEffect(() => forceUpdate(), [scorePoles]);
+    return () => {
+      animValue.removeAllListeners();
+      animation?.stop();
+    };
+  }, [size]);
+
+  const coordinateScorePoles = useCoordinateScorePoles(
+    {array: poles, length: size ?? 0, multiplier},
+    type,
+  );
+
+  const coordinateGuidePoles = useCoordinateGuidePoles(
+    {array: poles, length: size ?? 0},
+    type,
+  );
+
+  const coordinateGuideInfos = useCoordinateGuidePoles(
+    {array: poles, length: (size ?? 0) / 2},
+    type,
+  );
 
   return (
-    <View
-      style={[styles.container, style]}
-      onLayout={event =>
-        useLayout(event, (value, offsetResult) => {
-          length.current = value;
-          offset.current = offsetResult;
-          forceUpdate();
-        })
-      }>
-      {length.current > 0 && (
-        <Svg viewBox={`0 0 ${length.current * 2} ${length.current * 2}`}>
-          {generateLines(guidePoles, length.current, 'guide')}
-          {generateLines(scorePoles, length.current, 'score')}
+    <View style={[styles.container, style]} onLayout={onLayout}>
+      {size && (
+        <Svg viewBox={`0 0 ${size * 2} ${size * 2}`}>
+          {generateLines(coordinateGuidePoles, size, 'guide')}
+          {generateLines(coordinateScorePoles, size, 'score')}
           <SVGPolygon
-            points={generatePolygonPoints(scorePoles)}
+            points={generatePolygonPoints(coordinateScorePoles)}
             fill={innerColor ?? black}
             fillOpacity={innerOpacity ?? 1}
             {...outerStroke}
           />
         </Svg>
       )}
-      {generateInfo(guidePoles, offset.current)}
+      {size && generateInfo(coordinateGuideInfos, offset ?? {x: 0, y: 0})}
     </View>
   );
 }

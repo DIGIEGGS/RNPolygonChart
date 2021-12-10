@@ -1,7 +1,7 @@
 import React from 'react';
 import { IChartProps } from '../../types';
-import { PolygonLayer } from '../Polygon/layer';
+import Polygon from '../Polygon';
 
 export default function Hexagon(props: IChartProps) {
-  return <PolygonLayer {...props} type="hexagon" />;
+  return <Polygon {...props} type="hexagon" />;
 }
