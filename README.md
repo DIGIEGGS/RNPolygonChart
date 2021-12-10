@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
 
 You can use more poles for other polygons or polygon will render as if remaining scores are zero.
 
-![polygon initial](https://user-images.githubusercontent.com/89466000/144827429-21307cf6-bc36-457b-ad71-227fa6e21fc1.gif)
+![polygon2](https://user-images.githubusercontent.com/89466000/145551533-f31e488b-2143-44b2-a0ff-5bb9915d9b41.gif)
 
 ## Props
 
