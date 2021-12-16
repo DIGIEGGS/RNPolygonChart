@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import { SafeAreaView, StyleSheet, View } from 'react-native';
 import { Hexagon, Pentagon, Tetragon, Triangle } from './src';
 import Button from './src/components/Button';
-import { hexagon, pentagon, tetragon, triangle } from './src/mocks/examples';
+import { hexagon } from './src/mocks/hexagon';
+import { pentagon } from './src/mocks/pentagon';
+import { tetragon } from './src/mocks/tetragon';
+import { triangle } from './src/mocks/triangle';
 import { PolygonType } from './src/types';
 
 const App = () => {

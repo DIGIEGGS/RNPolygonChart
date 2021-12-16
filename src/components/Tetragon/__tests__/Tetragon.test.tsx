@@ -1,23 +1,23 @@
 import React from 'react';
 import { act, fireEvent, render, waitFor } from '@testing-library/react-native';
-import Hexagon from '../';
-import { hexagon, hexagonForTestingInfo } from '../../../mocks/hexagon';
+import Tetragon from '../';
+import { tetragon, tetragonForTestingInfo } from '../../../mocks/tetragon';
 import { IChartProps } from '../../../types';
 
 test('renders correctly', async () => {
   const rendered = render(
-    <Hexagon {...hexagon} style={{width: 300, height: 300}} />,
+    <Tetragon {...tetragon} style={{width: 300, height: 300}} />,
   );
 
   expect(rendered).toBeTruthy();
 });
 
 test('texts render and press correctly', async () => {
-  const functions = [...new Array(6)].map(() => jest.fn());
+  const functions = [...new Array(4)].map(() => jest.fn());
 
   const data: IChartProps = {
-    ...hexagonForTestingInfo,
-    poles: hexagonForTestingInfo.poles.map((v, i) => ({
+    ...tetragonForTestingInfo,
+    poles: tetragonForTestingInfo.poles.map((v, i) => ({
       ...v,
       info: {...v.info, onPress: functions[i]},
     })),
@@ -25,7 +25,7 @@ test('texts render and press correctly', async () => {
 
   jest.useFakeTimers();
   const {getByTestId, getByText} = render(
-    <Hexagon
+    <Tetragon
       {...data}
       animation={undefined}
       style={{width: 300, height: 300}}
