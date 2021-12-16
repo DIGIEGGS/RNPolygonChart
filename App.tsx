@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { SafeAreaView, StyleSheet, View } from 'react-native';
 import { Hexagon, Pentagon, Tetragon, Triangle } from './src';
 import Button from './src/components/Button';
-import { hexagon, pentagon, tetragon, triangle } from './src/style/examples';
+import { hexagon, pentagon, tetragon, triangle } from './src/mocks/examples';
 import { PolygonType } from './src/types';
 
 const App = () => {
@@ -26,10 +26,10 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.buttonWrapper}>
-        <Button type="triangle" onClick={() => setType('triangle')} />
-        <Button type="tetragon" onClick={() => setType('tetragon')} />
-        <Button type="pentagon" onClick={() => setType('pentagon')} />
-        <Button type="hexagon" onClick={() => setType('hexagon')} />
+        <Button type="triangle" onPress={() => setType('triangle')} />
+        <Button type="tetragon" onPress={() => setType('tetragon')} />
+        <Button type="pentagon" onPress={() => setType('pentagon')} />
+        <Button type="hexagon" onPress={() => setType('hexagon')} />
       </View>
       {getComponent()}
     </SafeAreaView>

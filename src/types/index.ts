@@ -67,7 +67,7 @@ export interface ICoordinateScoreArgs extends ICoordinatePoleArgs {
 export type PoleType = 'guide' | 'score';
 
 export interface IButtonProps {
-  onClick: () => void;
+  onPress: () => void;
   type: PolygonType;
 }
 

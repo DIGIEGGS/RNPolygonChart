@@ -41,7 +41,11 @@ export default function Polygon({
   }, [size]);
 
   const coordinateScorePoles = useCoordinateScorePoles(
-    {array: poles, length: size ?? 0, multiplier},
+    {
+      array: poles,
+      length: size ?? 0,
+      multiplier: animationInput ? multiplier : 1,
+    },
     type,
   );
 
@@ -56,7 +60,10 @@ export default function Polygon({
   );
 
   return (
-    <View style={[styles.container, style]} onLayout={onLayout}>
+    <View
+      style={[styles.container, style]}
+      onLayout={onLayout}
+      testID="test-container">
       {size && (
         <Svg viewBox={`0 0 ${size * 2} ${size * 2}`}>
           {generateLines(coordinateGuidePoles, size, 'guide')}

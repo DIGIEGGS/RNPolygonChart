@@ -63,7 +63,6 @@ export const useComponentSize: () => IUseComponentSizeResult = () => {
 
   const onLayout = useCallback((event: LayoutChangeEvent) => {
     const {width, height} = event.nativeEvent.layout;
-
     const min = Math.min(...[width, height].filter(f => f !== 0));
 
     setSize(min);
@@ -119,11 +118,11 @@ export const generateInfo = (
   info: Array<IFinalPoleResult>,
   overallOffset: IOffset,
 ) =>
-  info.map((v, i) => {
-    return (
+  info.map(
+    (v, i) =>
       v.end && (
         <TouchableOpacity
-          key={i}
+          key={`to${i}`}
           onPress={v.info?.onPress}
           style={{
             position: 'absolute',
@@ -136,8 +135,12 @@ export const generateInfo = (
               (overallOffset.y ?? 0) / 2 +
               (v.info?.offset?.y ?? 0),
           }}>
-          <Text style={v.info?.textStyle}>{v.info?.text}</Text>
+          <Text key={`t${i}`} style={v.info?.textStyle}>
+            {v.info?.text}
+          </Text>
         </TouchableOpacity>
-      )
-    );
-  });
+      ),
+  );
+
+export const getButtonText = (type: PolygonType) =>
+  [type[0].toUpperCase(), type.substring(1)].join('');
