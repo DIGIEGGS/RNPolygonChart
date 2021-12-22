@@ -1,5 +1,14 @@
 # React Native Polygon Chart
 
+[![DIGIEGGS - RNPolygonChart](https://img.shields.io/static/v1?label=DIGIEGGS&message=RNPolygonChart&color=blue&logo=github)](https://github.com/DIGIEGGS/RNPolygonChart 'Go to GitHub repo')
+[![stars - RNPolygonChart](https://img.shields.io/github/stars/DIGIEGGS/RNPolygonChart?style=social)](https://github.com/DIGIEGGS/RNPolygonChart)
+[![forks - RNPolygonChart](https://img.shields.io/github/forks/DIGIEGGS/RNPolygonChart?style=social)](https://github.com/DIGIEGGS/RNPolygonChart)
+
+[![Unit Tests](https://github.com/DIGIEGGS/RNPolygonChart/workflows/Unit%20Tests/badge.svg)](https://github.com/DIGIEGGS/RNPolygonChart/actions?query=workflow:"Unit+Tests")
+[![GitHub tag](https://img.shields.io/github/tag/DIGIEGGS/RNPolygonChart?include_prereleases=&sort=semver&color=blue)](https://github.com/DIGIEGGS/RNPolygonChart/releases/)
+[![License](https://img.shields.io/badge/License-MIT-blue)](#license)
+[![issues - RNPolygonChart](https://img.shields.io/github/issues/DIGIEGGS/RNPolygonChart)](https://github.com/DIGIEGGS/RNPolygonChart/issues)
+
 Customizable and animatable polygon chart.
 
 ## Getting started
@@ -37,12 +46,7 @@ No additional steps needed
 #### Import
 
 ```javascript
-import {
-  Hexagon,
-  Pentagon,
-  Tetragon,
-  Triangle,
-} from 'react-native-polygon-chart';
+import { Hexagon, Pentagon, Tetragon, Triangle } from 'react-native-polygon-chart';
 ```
 
 #### Usage
