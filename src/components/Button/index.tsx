@@ -4,7 +4,7 @@ import { getButtonText } from '../../functions/utility';
 import { IButtonProps } from '../../types';
 import styles from './styles';
 
-const Button = ({onPress, type}: IButtonProps) => (
+const Button = ({ onPress, type }: IButtonProps) => (
   <TouchableOpacity style={styles.container} onPress={onPress}>
     <Text style={styles.text}>{getButtonText(type)}</Text>
   </TouchableOpacity>

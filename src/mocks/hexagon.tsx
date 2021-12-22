@@ -7,14 +7,14 @@ export const hexagon: IChartProps = {
   poles: [
     {
       score: 0.7,
-      innerStroke: {opacity: 1, stroke: green, strokeWidth: 2},
-      stroke: {opacity: 1, stroke: blue},
-      info: {text: <Text>First (JSX element)</Text>},
+      innerStroke: { opacity: 1, stroke: green, strokeWidth: 2 },
+      stroke: { opacity: 1, stroke: blue },
+      info: { text: <Text>First (JSX element)</Text> },
     },
     {
       score: 0.6,
-      innerStroke: {opacity: 1, stroke: green, strokeWidth: 2},
-      stroke: {opacity: 1, stroke: blue},
+      innerStroke: { opacity: 1, stroke: green, strokeWidth: 2 },
+      stroke: { opacity: 1, stroke: blue },
       info: {
         text: 'Second',
         style: {
@@ -31,50 +31,50 @@ export const hexagon: IChartProps = {
     },
     {
       score: 0.9,
-      innerStroke: {opacity: 1, stroke: green, strokeWidth: 2},
-      stroke: {opacity: 1, stroke: blue},
-      info: {text: 'Third', textStyle: {fontSize: 30}},
+      innerStroke: { opacity: 1, stroke: green, strokeWidth: 2 },
+      stroke: { opacity: 1, stroke: blue },
+      info: { text: 'Third', textStyle: { fontSize: 30 } },
     },
     {
       score: 0.3,
-      innerStroke: {opacity: 1, stroke: green, strokeWidth: 2},
-      stroke: {opacity: 1, stroke: blue},
-      info: {text: 'Fourth', textStyle: {color: pink, fontWeight: '700'}},
+      innerStroke: { opacity: 1, stroke: green, strokeWidth: 2 },
+      stroke: { opacity: 1, stroke: blue },
+      info: { text: 'Fourth', textStyle: { color: pink, fontWeight: '700' } },
     },
     {
       score: 0.9,
-      innerStroke: {opacity: 1, stroke: green, strokeWidth: 2},
-      stroke: {opacity: 1, stroke: blue},
-      info: {text: 'Fifth', textStyle: {color: blue}},
+      innerStroke: { opacity: 1, stroke: green, strokeWidth: 2 },
+      stroke: { opacity: 1, stroke: blue },
+      info: { text: 'Fifth', textStyle: { color: blue } },
     },
     {
       score: 1,
-      innerStroke: {opacity: 1, stroke: green, strokeWidth: 2},
-      stroke: {opacity: 1, stroke: blue},
+      innerStroke: { opacity: 1, stroke: green, strokeWidth: 2 },
+      stroke: { opacity: 1, stroke: blue },
       info: {
         text: 'Sixth (x: -100, y: -10)',
-        offset: {x: -100, y: -10},
+        offset: { x: -100, y: -10 },
       },
     },
   ],
   innerColor: green,
   innerOpacity: 0.2,
-  outerStroke: {stroke: green, opacity: 1, strokeWidth: 1},
-  animation: {delay: 0, duration: 500},
+  outerStroke: { stroke: green, opacity: 1, strokeWidth: 1 },
+  animation: { delay: 0, duration: 500 },
 };
 
 export const hexagonForTestingInfo: IChartProps = {
   poles: [
     {
       score: 0.7,
-      innerStroke: {opacity: 1, stroke: green, strokeWidth: 2},
-      stroke: {opacity: 1, stroke: blue},
-      info: {text: 'First'},
+      innerStroke: { opacity: 1, stroke: green, strokeWidth: 2 },
+      stroke: { opacity: 1, stroke: blue },
+      info: { text: 'First' },
     },
     {
       score: 0.6,
-      innerStroke: {opacity: 1, stroke: green, strokeWidth: 2},
-      stroke: {opacity: 1, stroke: blue},
+      innerStroke: { opacity: 1, stroke: green, strokeWidth: 2 },
+      stroke: { opacity: 1, stroke: blue },
       info: {
         text: 'Second',
         style: {
@@ -90,34 +90,34 @@ export const hexagonForTestingInfo: IChartProps = {
     },
     {
       score: 0.9,
-      innerStroke: {opacity: 1, stroke: green, strokeWidth: 2},
-      stroke: {opacity: 1, stroke: blue},
-      info: {text: 'Third', textStyle: {fontSize: 30}},
+      innerStroke: { opacity: 1, stroke: green, strokeWidth: 2 },
+      stroke: { opacity: 1, stroke: blue },
+      info: { text: 'Third', textStyle: { fontSize: 30 } },
     },
     {
       score: 0.3,
-      innerStroke: {opacity: 1, stroke: green, strokeWidth: 2},
-      stroke: {opacity: 1, stroke: blue},
-      info: {text: 'Fourth', textStyle: {color: pink, fontWeight: '700'}},
+      innerStroke: { opacity: 1, stroke: green, strokeWidth: 2 },
+      stroke: { opacity: 1, stroke: blue },
+      info: { text: 'Fourth', textStyle: { color: pink, fontWeight: '700' } },
     },
     {
       score: 0.9,
-      innerStroke: {opacity: 1, stroke: green, strokeWidth: 2},
-      stroke: {opacity: 1, stroke: blue},
-      info: {text: 'Fifth', textStyle: {color: blue}},
+      innerStroke: { opacity: 1, stroke: green, strokeWidth: 2 },
+      stroke: { opacity: 1, stroke: blue },
+      info: { text: 'Fifth', textStyle: { color: blue } },
     },
     {
       score: 1,
-      innerStroke: {opacity: 1, stroke: green, strokeWidth: 2},
-      stroke: {opacity: 1, stroke: blue},
+      innerStroke: { opacity: 1, stroke: green, strokeWidth: 2 },
+      stroke: { opacity: 1, stroke: blue },
       info: {
         text: 'Sixth',
-        offset: {x: -100, y: -10},
+        offset: { x: -100, y: -10 },
       },
     },
   ],
   innerColor: green,
   innerOpacity: 0.2,
-  outerStroke: {stroke: green, opacity: 1, strokeWidth: 1},
-  animation: {delay: 0, duration: 500},
+  outerStroke: { stroke: green, opacity: 1, strokeWidth: 1 },
+  animation: { delay: 0, duration: 500 },
 };

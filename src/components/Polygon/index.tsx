@@ -19,17 +19,14 @@ export default function Polygon({
   animation: animationInput,
   type,
 }: IGenericChartProps) {
-  const {size, offset, onLayout} = useComponentSize();
+  const { size, offset, onLayout } = useComponentSize();
   const [multiplier, setMultiplier] = useState<number>(0);
-  const [animValue, setAnimValue] = useState<Animated.Value>(
-    new Animated.Value(0),
-  );
-  const animation =
-    animationInput && useAnimation({...animationInput, value: animValue});
+  const [animValue, setAnimValue] = useState<Animated.Value>(new Animated.Value(0));
+  const animation = animationInput && useAnimation({ ...animationInput, value: animValue });
 
   useEffect(() => {
     if (size) {
-      animValue.addListener(({value}) => setMultiplier(value));
+      animValue.addListener(({ value }) => setMultiplier(value));
       animation?.start();
     }
 
@@ -48,21 +45,15 @@ export default function Polygon({
     type,
   );
 
-  const coordinateGuidePoles = useCoordinateGuidePoles(
-    {array: poles, length: size ?? 0},
-    type,
-  );
+  const coordinateGuidePoles = useCoordinateGuidePoles({ array: poles, length: size ?? 0 }, type);
 
   const coordinateGuideInfos = useCoordinateGuidePoles(
-    {array: poles, length: (size ?? 0) / 2},
+    { array: poles, length: (size ?? 0) / 2 },
     type,
   );
 
   return (
-    <View
-      style={[styles.container, style]}
-      onLayout={onLayout}
-      testID="test-container">
+    <View style={[styles.container, style]} onLayout={onLayout} testID="test-container">
       {size && (
         <Svg viewBox={`0 0 ${size * 2} ${size * 2}`}>
           {generateLines(coordinateGuidePoles, size, 'guide')}
@@ -75,7 +66,7 @@ export default function Polygon({
           />
         </Svg>
       )}
-      {size && generateInfo(coordinateGuideInfos, offset ?? {x: 0, y: 0})}
+      {size && generateInfo(coordinateGuideInfos, offset ?? { x: 0, y: 0 })}
     </View>
   );
 }

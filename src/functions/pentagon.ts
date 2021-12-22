@@ -8,29 +8,29 @@ export const coordinateGuidePoles = ({
   return array.map((v, i) => {
     switch (i) {
       case 0:
-        return {...v, end: {x: length, y: 0}};
+        return { ...v, end: { x: length, y: 0 } };
       case 1:
         return {
           ...v,
-          end: {x: length * (1 - sin(72)), y: length * (1 - cos(72))},
+          end: { x: length * (1 - sin(72)), y: length * (1 - cos(72)) },
         };
       case 2:
         return {
           ...v,
-          end: {x: length * (1 - sin(36)), y: length * (1 + cos(36))},
+          end: { x: length * (1 - sin(36)), y: length * (1 + cos(36)) },
         };
       case 3:
         return {
           ...v,
-          end: {x: length * (1 + sin(36)), y: length * (1 + cos(36))},
+          end: { x: length * (1 + sin(36)), y: length * (1 + cos(36)) },
         };
       case 4:
         return {
           ...v,
-          end: {x: length * (1 + sin(72)), y: length * (1 - cos(72))},
+          end: { x: length * (1 + sin(72)), y: length * (1 - cos(72)) },
         };
       default:
-        return {...v};
+        return { ...v };
     }
   });
 };
@@ -45,7 +45,7 @@ export const coordinateScorePoles = ({
 
     switch (i) {
       case 0:
-        return {...v, end: {x: length, y: length * (1 - score)}};
+        return { ...v, end: { x: length, y: length * (1 - score) } };
       case 1:
         return {
           ...v,
@@ -79,7 +79,7 @@ export const coordinateScorePoles = ({
           },
         };
       default:
-        return {...v};
+        return { ...v };
     }
   });
 };
