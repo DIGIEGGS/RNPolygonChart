@@ -1,6 +1,6 @@
 {
   "name": "@digieggs/rn-polygon-chart",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "main": "lib/module/index.js",
   "module": "lib/module/index.js",
   "react-native": "src/index.ts",

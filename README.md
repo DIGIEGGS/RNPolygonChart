@@ -175,13 +175,13 @@ You can use more poles for other polygons or polygon will render as if remaining
 
 ### `IInfo`
 
-| Props       | Type                          | Required |
-| ----------- | ----------------------------- | -------- |
-| `text`      | `string` &#124; `JSX.Element` | no       |
-| `textStyle` | `TextStyle`                   | no       |
-| `style`     | `ViewStyle`                   | no       |
-| `onPress`   | `() => void`                  | no       |
-| `offset`    | [`IOffset`](#IOffset)         | no       |
+| Props       | Type                  | Required |
+| ----------- | --------------------- | -------- |
+| `text`      | `string`              | no       |
+| `textStyle` | `TextStyle`           | no       |
+| `style`     | `ViewStyle`           | no       |
+| `onPress`   | `() => void`          | no       |
+| `offset`    | [`IOffset`](#IOffset) | no       |
 
 - The `offset` prop determines the absolute x and y offsets of info element.
 

@@ -126,11 +126,7 @@ export const generateInfo = (info: Array<IFinalPoleResult>, overallOffset: IOffs
             left: (v.end.x ?? 0) + (overallOffset.x ?? 0) / 2 + (v.info?.offset?.x ?? 0),
             top: (v.end.y ?? 0) + (overallOffset.y ?? 0) / 2 + (v.info?.offset?.y ?? 0),
           }}
-        >
-          <Text key={`t${i}`} style={v.info?.textStyle}>
-            {v.info?.text}
-          </Text>
-        </TouchableOpacity>
+        ></TouchableOpacity>
       ),
   );
 
