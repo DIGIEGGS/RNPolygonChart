@@ -1,4 +1,4 @@
-import { Animated, EasingFunction, ViewStyle } from 'react-native';
+import { Animated, EasingFunction, LayoutChangeEvent, TextStyle, ViewStyle } from 'react-native';
 
 export interface ICoordinate {
   x: number;
@@ -11,13 +11,19 @@ export interface ILineProps {
   opacity?: number;
 }
 
-export interface IInfo {}
+export interface IInfo {
+  text?: string | JSX.Element;
+  textStyle?: TextStyle;
+  style?: ViewStyle;
+  offset?: IOffset;
+  onPress?: () => void;
+}
 
 export interface IPole {
   score: number;
-  text?: string;
   stroke?: ILineProps;
   innerStroke?: ILineProps;
+  info?: IInfo;
 }
 
 export interface IChartProps {
@@ -29,7 +35,7 @@ export interface IChartProps {
   style?: ViewStyle;
 }
 
-export interface IPolygonLayerProps extends IChartProps {
+export interface IGenericChartProps extends IChartProps {
   type: PolygonType;
 }
 
@@ -47,12 +53,6 @@ export interface IFinalPoleResult extends IPole {
   end?: ICoordinate;
 }
 
-export interface IPolygonProps extends IPolygonLayerProps {
-  onLayout: (length: number) => () => void;
-  guidePoles: Array<IFinalPoleResult>;
-  scorePoles: Array<IFinalPoleResult>;
-}
-
 export type PolygonType = 'triangle' | 'tetragon' | 'pentagon' | 'hexagon';
 
 export interface ICoordinatePoleArgs {
@@ -67,6 +67,18 @@ export interface ICoordinateScoreArgs extends ICoordinatePoleArgs {
 export type PoleType = 'guide' | 'score';
 
 export interface IButtonProps {
-  onClick: () => void;
+  onPress: () => void;
   type: PolygonType;
+}
+
+export interface IOffset extends ICoordinate {}
+
+export interface IInfoLayout extends IFinalPoleResult {
+  offset?: IOffset;
+}
+
+export interface IUseComponentSizeResult {
+  size?: number;
+  offset?: IOffset;
+  onLayout: (event: LayoutChangeEvent) => void;
 }

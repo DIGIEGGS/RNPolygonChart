@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
 
 You can use more poles for other polygons or polygon will render as if remaining scores are zero.
 
-![polygon initial](https://user-images.githubusercontent.com/89466000/144827429-21307cf6-bc36-457b-ad71-227fa6e21fc1.gif)
+![polygon2](https://user-images.githubusercontent.com/89466000/145551533-f31e488b-2143-44b2-a0ff-5bb9915d9b41.gif)
 
 ## Props
 
@@ -150,7 +150,7 @@ You can use more poles for other polygons or polygon will render as if remaining
 | ------------- | -------- | -------- |
 | `stroke`      | `string` | no       |
 | `strokeWidth` | `number` | no       |
-| `opacity `    | `string` | no       |
+| `opacity `    | `number` | no       |
 
 - The `stroke` prop is being used for line color.
 
@@ -158,14 +158,37 @@ You can use more poles for other polygons or polygon will render as if remaining
 
 ### `IPole`
 
-| Props         | Type         | Required |
-| ------------- | ------------ | -------- |
-| `score`       | `number`     | yes      |
-| `text`        | `string`     | no       |
-| `stroke`      | `ILineProps` | no       |
-| `innerStroke` | `ILineProps` | no       |
+| Props         | Type              | Required |
+| ------------- | ----------------- | -------- |
+| `score`       | `number`          | yes      |
+| `info`        | [`IInfo`](#IInfo) | no       |
+| `stroke`      | `ILineProps`      | no       |
+| `innerStroke` | `ILineProps`      | no       |
 
 - The `point` prop is a multiplier between 0 and 1 determines the vertex distance from the center of the polygon.
+
+---
+
+### `IInfo`
+
+| Props       | Type                          | Required |
+| ----------- | ----------------------------- | -------- |
+| `text`      | `string` &#124; `JSX.Element` | no       |
+| `textStyle` | `TextStyle`                   | no       |
+| `style`     | `ViewStyle`                   | no       |
+| `onPress`   | `() => void`                  | no       |
+| `offset`    | [`IOffset`](#IOffset)         | no       |
+
+- The `offset` prop determines the absolute x and y offsets of info element.
+
+---
+
+### `IOffset`
+
+| Props | Type     | Required |
+| ----- | -------- | -------- |
+| `x`   | `number` | yes      |
+| `y`   | `number` | yes      |
 
 ---
 
