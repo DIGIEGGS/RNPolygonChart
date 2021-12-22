@@ -54,7 +54,7 @@ export default function Polygon({
 
   return (
     <View style={[styles.container, style]} onLayout={onLayout} testID="test-container">
-      {size && (
+      {size && size !== Infinity && (
         <Svg viewBox={`0 0 ${size * 2} ${size * 2}`}>
           {generateLines(coordinateGuidePoles, size, 'guide')}
           {generateLines(coordinateScorePoles, size, 'score')}
@@ -66,7 +66,7 @@ export default function Polygon({
           />
         </Svg>
       )}
-      {size && generateInfo(coordinateGuideInfos, offset ?? { x: 0, y: 0 })}
+      {size && size !== Infinity && generateInfo(coordinateGuideInfos, offset ?? { x: 0, y: 0 })}
     </View>
   );
 }

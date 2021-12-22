@@ -40,8 +40,8 @@ const App = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {justifyContent: 'center', flex: 1, alignItems: 'center'},
-  component: {width: 300, height: 600},
+  container: { justifyContent: 'center', flex: 1, alignItems: 'center' },
+  component: { width: 300, height: 600 },
   buttonWrapper: {
     flexDirection: 'row',
     alignSelf: 'center',
