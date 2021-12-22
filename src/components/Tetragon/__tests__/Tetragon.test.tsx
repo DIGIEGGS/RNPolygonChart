@@ -5,9 +5,7 @@ import { tetragon, tetragonForTestingInfo } from '../../../mocks/tetragon';
 import { IChartProps } from '../../../types';
 
 test('renders correctly', async () => {
-  const rendered = render(
-    <Tetragon {...tetragon} style={{width: 300, height: 300}} />,
-  );
+  const rendered = render(<Tetragon {...tetragon} style={{ width: 300, height: 300 }} />);
 
   expect(rendered).toBeTruthy();
 });
@@ -19,17 +17,13 @@ test('texts render and press correctly', async () => {
     ...tetragonForTestingInfo,
     poles: tetragonForTestingInfo.poles.map((v, i) => ({
       ...v,
-      info: {...v.info, onPress: functions[i]},
+      info: { ...v.info, onPress: functions[i] },
     })),
   };
 
   jest.useFakeTimers();
-  const {getByTestId, getByText} = render(
-    <Tetragon
-      {...data}
-      animation={undefined}
-      style={{width: 300, height: 300}}
-    />,
+  const { getByTestId, getByText } = render(
+    <Tetragon {...data} animation={undefined} style={{ width: 300, height: 300 }} />,
   );
 
   const view = getByTestId('test-container');
@@ -56,7 +50,7 @@ test('texts render and press correctly', async () => {
           expect(functions[i]).toHaveBeenCalled();
         });
       },
-      {interval: 1000, timeout: 4000},
+      { interval: 1000, timeout: 4000 },
     );
   });
 });

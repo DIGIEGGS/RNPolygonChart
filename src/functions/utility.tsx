@@ -62,14 +62,14 @@ export const useComponentSize: () => IUseComponentSizeResult = () => {
   const [offset, setOffset] = useState<IOffset>();
 
   const onLayout = useCallback((event: LayoutChangeEvent) => {
-    const {width, height} = event.nativeEvent.layout;
+    const { width, height } = event.nativeEvent.layout;
     const min = Math.min(...[width, height].filter(f => f !== 0));
 
     setSize(min);
-    setOffset({x: width - min, y: height - min});
+    setOffset({ x: width - min, y: height - min });
   }, []);
 
-  return {size, offset, onLayout};
+  return { size, offset, onLayout };
 };
 
 export const finalizePole = (poles: Array<IPole>): Array<IPole> =>
@@ -114,10 +114,7 @@ export const generateLines = (
 export const generatePolygonPoints = (poles: Array<IFinalPoleResult>) =>
   poles.map(v => `${v.end?.x ?? 0},${v.end?.y ?? 0}`).join(' ');
 
-export const generateInfo = (
-  info: Array<IFinalPoleResult>,
-  overallOffset: IOffset,
-) =>
+export const generateInfo = (info: Array<IFinalPoleResult>, overallOffset: IOffset) =>
   info.map(
     (v, i) =>
       v.end && (
@@ -126,15 +123,10 @@ export const generateInfo = (
           onPress={v.info?.onPress}
           style={{
             position: 'absolute',
-            left:
-              (v.end.x ?? 0) +
-              (overallOffset.x ?? 0) / 2 +
-              (v.info?.offset?.x ?? 0),
-            top:
-              (v.end.y ?? 0) +
-              (overallOffset.y ?? 0) / 2 +
-              (v.info?.offset?.y ?? 0),
-          }}>
+            left: (v.end.x ?? 0) + (overallOffset.x ?? 0) / 2 + (v.info?.offset?.x ?? 0),
+            top: (v.end.y ?? 0) + (overallOffset.y ?? 0) / 2 + (v.info?.offset?.y ?? 0),
+          }}
+        >
           <Text key={`t${i}`} style={v.info?.textStyle}>
             {v.info?.text}
           </Text>

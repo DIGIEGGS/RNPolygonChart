@@ -7,15 +7,15 @@ export const coordinateGuidePoles = ({
   return array.map((v, i) => {
     switch (i) {
       case 0:
-        return {...v, end: {x: length, y: 0}};
+        return { ...v, end: { x: length, y: 0 } };
       case 1:
-        return {...v, end: {x: 0, y: length}};
+        return { ...v, end: { x: 0, y: length } };
       case 2:
-        return {...v, end: {x: length, y: length * 2}};
+        return { ...v, end: { x: length, y: length * 2 } };
       case 3:
-        return {...v, end: {x: length * 2, y: length}};
+        return { ...v, end: { x: length * 2, y: length } };
       default:
-        return {...v};
+        return { ...v };
     }
   });
 };
@@ -30,24 +30,24 @@ export const coordinateScorePoles = ({
 
     switch (i) {
       case 0:
-        return {...v, end: {x: length, y: length * (1 - score)}};
+        return { ...v, end: { x: length, y: length * (1 - score) } };
       case 1:
         return {
           ...v,
-          end: {x: length * (1 - score), y: length},
+          end: { x: length * (1 - score), y: length },
         };
       case 2:
         return {
           ...v,
-          end: {x: length, y: length * (1 + score)},
+          end: { x: length, y: length * (1 + score) },
         };
       case 3:
         return {
           ...v,
-          end: {x: length * (1 + score), y: length},
+          end: { x: length * (1 + score), y: length },
         };
       default:
-        return {...v};
+        return { ...v };
     }
   });
 };
