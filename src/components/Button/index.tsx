@@ -4,10 +4,10 @@ import { getButtonText } from '../../functions/utility';
 import { IButtonProps } from '../../types';
 import styles from './styles';
 
-export default function Button({onPress, type}: IButtonProps) {
-  return (
-    <TouchableOpacity style={styles.container} onPress={onPress}>
-      <Text style={styles.text}>{getButtonText(type)}</Text>
-    </TouchableOpacity>
-  );
-}
+const Button = ({onPress, type}: IButtonProps) => (
+  <TouchableOpacity style={styles.container} onPress={onPress}>
+    <Text style={styles.text}>{getButtonText(type)}</Text>
+  </TouchableOpacity>
+);
+
+export default Button;

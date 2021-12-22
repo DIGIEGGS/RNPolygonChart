@@ -8,7 +8,7 @@ import {
 } from '../../functions/utility';
 import { black } from '../../style/colors';
 import { IGenericChartProps } from '../../types';
-import useStyles from './styles';
+import styles from './styles';
 
 export default function Polygon({
   innerColor,
@@ -20,7 +20,6 @@ export default function Polygon({
   type,
 }: IGenericChartProps) {
   const {size, offset, onLayout} = useComponentSize();
-  const styles = useStyles(size);
   const [multiplier, setMultiplier] = useState<number>(0);
   const [animValue, setAnimValue] = useState<Animated.Value>(
     new Animated.Value(0),
