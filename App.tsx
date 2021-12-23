@@ -14,11 +14,17 @@ const App = () => {
   const getComponent = () => {
     switch (type) {
       case 'triangle':
-        return <Triangle {...triangle} style={styles.component} />;
+        return (
+          <Triangle {...triangle} style={styles.component} />
+        );
       case 'tetragon':
-        return <Tetragon {...tetragon} style={styles.component} />;
+        return (
+          <Tetragon {...tetragon} style={styles.component} />
+        );
       case 'pentagon':
-        return <Pentagon {...pentagon} style={styles.component} />;
+        return (
+          <Pentagon {...pentagon} style={styles.component} />
+        );
       case 'hexagon':
         return <Hexagon {...hexagon} style={styles.component} />;
       default:
@@ -29,10 +35,22 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.buttonWrapper}>
-        <Button type="triangle" onPress={() => setType('triangle')} />
-        <Button type="tetragon" onPress={() => setType('tetragon')} />
-        <Button type="pentagon" onPress={() => setType('pentagon')} />
-        <Button type="hexagon" onPress={() => setType('hexagon')} />
+        <Button
+          type="triangle"
+          onPress={() => setType('triangle')}
+        />
+        <Button
+          type="tetragon"
+          onPress={() => setType('tetragon')}
+        />
+        <Button
+          type="pentagon"
+          onPress={() => setType('pentagon')}
+        />
+        <Button
+          type="hexagon"
+          onPress={() => setType('hexagon')}
+        />
       </View>
       {getComponent()}
     </SafeAreaView>
@@ -40,7 +58,11 @@ const App = () => {
 };
 
 const styles = StyleSheet.create({
-  container: { justifyContent: 'center', flex: 1, alignItems: 'center' },
+  container: {
+    justifyContent: 'center',
+    flex: 1,
+    alignItems: 'center',
+  },
   component: { width: 300, height: 600 },
   buttonWrapper: {
     flexDirection: 'row',
