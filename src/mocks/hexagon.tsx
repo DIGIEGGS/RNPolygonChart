@@ -1,5 +1,4 @@
-import React from 'react';
-import { Alert, Text } from 'react-native';
+import { Alert } from 'react-native';
 import { black, blue, green, pink } from '../style/colors';
 import { IChartProps } from '../types';
 
@@ -9,7 +8,7 @@ export const hexagon: IChartProps = {
       score: 0.7,
       innerStroke: { opacity: 1, stroke: green, strokeWidth: 2 },
       stroke: { opacity: 1, stroke: blue },
-      info: { text: <Text>First (JSX element)</Text> },
+      info: { text: 'First' },
     },
     {
       score: 0.6,
@@ -39,7 +38,10 @@ export const hexagon: IChartProps = {
       score: 0.3,
       innerStroke: { opacity: 1, stroke: green, strokeWidth: 2 },
       stroke: { opacity: 1, stroke: blue },
-      info: { text: 'Fourth', textStyle: { color: pink, fontWeight: '700' } },
+      info: {
+        text: 'Fourth',
+        textStyle: { color: pink, fontWeight: '700' },
+      },
     },
     {
       score: 0.9,
@@ -98,7 +100,10 @@ export const hexagonForTestingInfo: IChartProps = {
       score: 0.3,
       innerStroke: { opacity: 1, stroke: green, strokeWidth: 2 },
       stroke: { opacity: 1, stroke: blue },
-      info: { text: 'Fourth', textStyle: { color: pink, fontWeight: '700' } },
+      info: {
+        text: 'Fourth',
+        textStyle: { color: pink, fontWeight: '700' },
+      },
     },
     {
       score: 0.9,

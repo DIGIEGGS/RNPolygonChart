@@ -1,7 +1,12 @@
 import { Animated, Easing, Platform } from 'react-native';
 import { IAnimationProps } from '../types';
 
-export const useAnimation = ({ duration, value, easing, delay }: IAnimationProps) =>
+export const useAnimation = ({
+  duration,
+  value,
+  easing,
+  delay,
+}: IAnimationProps) =>
   Animated.timing(value, {
     toValue: 1,
     useNativeDriver: Platform.OS === 'ios',

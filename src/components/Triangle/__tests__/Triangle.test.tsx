@@ -5,7 +5,12 @@ import { triangle, triangleForTestingInfo } from '../../../mocks/triangle';
 import { IChartProps } from '../../../types';
 
 test('renders correctly', async () => {
-  const rendered = render(<Triangle {...triangle} style={{ width: 300, height: 300 }} />);
+  const rendered = render(
+    <Triangle
+      {...triangle}
+      style={{ width: 300, height: 300 }}
+    />,
+  );
 
   expect(rendered).toBeTruthy();
 });
@@ -23,7 +28,11 @@ test('texts render and press correctly', async () => {
 
   jest.useFakeTimers();
   const { getByTestId, getByText } = render(
-    <Triangle {...data} animation={undefined} style={{ width: 300, height: 300 }} />,
+    <Triangle
+      {...data}
+      animation={undefined}
+      style={{ width: 300, height: 300 }}
+    />,
   );
 
   const view = getByTestId('test-container');
@@ -41,7 +50,9 @@ test('texts render and press correctly', async () => {
     await waitFor(
       () => {
         data.poles.forEach((pole, i) => {
-          const text = getByText(pole.info?.text?.toString() ?? '');
+          const text = getByText(
+            pole.info?.text?.toString() ?? '',
+          );
 
           expect(text).toBeTruthy();
 

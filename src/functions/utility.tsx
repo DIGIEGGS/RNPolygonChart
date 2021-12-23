@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo, useState } from 'react';
-import { LayoutChangeEvent, Text, TouchableOpacity } from 'react-native';
+import { LayoutChangeEvent, Text as RNText, TouchableOpacity } from 'react-native';
 import { Line } from 'react-native-svg';
 import { black } from '../style/colors';
 import {
@@ -57,22 +57,27 @@ export const useCoordinateScorePoles = (
     }
   }, [props, type]);
 
-export const useComponentSize: () => IUseComponentSizeResult = () => {
-  const [size, setSize] = useState<number>();
-  const [offset, setOffset] = useState<IOffset>();
+export const useComponentSize: () => IUseComponentSizeResult =
+  () => {
+    const [size, setSize] = useState<number>();
+    const [offset, setOffset] = useState<IOffset>();
 
-  const onLayout = useCallback((event: LayoutChangeEvent) => {
-    const { width, height } = event.nativeEvent.layout;
-    const min = Math.min(...[width, height].filter(f => f !== 0));
+    const onLayout = useCallback((event: LayoutChangeEvent) => {
+      const { width, height } = event.nativeEvent.layout;
+      const min = Math.min(
+        ...[width, height].filter(f => f !== 0),
+      );
 
-    setSize(min);
-    setOffset({ x: width - min, y: height - min });
-  }, []);
+      setSize(min);
+      setOffset({ x: width - min, y: height - min });
+    }, []);
 
-  return { size, offset, onLayout };
-};
+    return { size, offset, onLayout };
+  };
 
-export const finalizePole = (poles: Array<IPole>): Array<IPole> =>
+export const finalizePole = (
+  poles: Array<IPole>,
+): Array<IPole> =>
   poles.map(v => ({
     ...v,
     stroke: {
@@ -87,10 +92,13 @@ export const finalizePole = (poles: Array<IPole>): Array<IPole> =>
     },
   }));
 
-const degToRad = (degrees: number): number => (degrees * Math.PI) / 180;
+const degToRad = (degrees: number): number =>
+  (degrees * Math.PI) / 180;
 
-export const sin = (degrees: number): number => Math.sin(degToRad(degrees));
-export const cos = (degrees: number): number => Math.cos(degToRad(degrees));
+export const sin = (degrees: number): number =>
+  Math.sin(degToRad(degrees));
+export const cos = (degrees: number): number =>
+  Math.cos(degToRad(degrees));
 
 export const generateLines = (
   poles: Array<IFinalPoleResult>,
@@ -101,7 +109,7 @@ export const generateLines = (
     (v, i) =>
       v.end && (
         <Line
-          key={`${i}`}
+          key={i}
           x1={length}
           y1={length}
           x2={v.end?.x}
@@ -111,25 +119,37 @@ export const generateLines = (
       ),
   );
 
-export const generatePolygonPoints = (poles: Array<IFinalPoleResult>) =>
+export const generatePolygonPoints = (
+  poles: Array<IFinalPoleResult>,
+) =>
   poles.map(v => `${v.end?.x ?? 0},${v.end?.y ?? 0}`).join(' ');
 
-export const generateInfo = (info: Array<IFinalPoleResult>, overallOffset: IOffset) =>
+export const generateInfo = (
+  info: Array<IFinalPoleResult>,
+  overallOffset: IOffset,
+) =>
   info.map(
     (v, i) =>
-      v.end && (
+      v.end &&
+      v.info?.text && (
         <TouchableOpacity
-          key={`to${i}`}
+          key={i}
           onPress={v.info?.onPress}
           style={{
             position: 'absolute',
-            left: (v.end.x ?? 0) + (overallOffset.x ?? 0) / 2 + (v.info?.offset?.x ?? 0),
-            top: (v.end.y ?? 0) + (overallOffset.y ?? 0) / 2 + (v.info?.offset?.y ?? 0),
+            left:
+              (v.end.x ?? 0) +
+              (overallOffset.x ?? 0) / 2 +
+              (v.info?.offset?.x ?? 0),
+            top:
+              (v.end.y ?? 0) +
+              (overallOffset.y ?? 0) / 2 +
+              (v.info?.offset?.y ?? 0),
           }}
         >
-          <Text key={`t${i}`} style={v.info?.textStyle}>
+          <RNText style={v.info?.textStyle}>
             {v.info?.text}
-          </Text>
+          </RNText>
         </TouchableOpacity>
       ),
   );

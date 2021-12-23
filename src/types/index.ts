@@ -12,7 +12,7 @@ export interface ILineProps {
 }
 
 export interface IInfo {
-  text?: string | JSX.Element;
+  text?: string;
   textStyle?: TextStyle;
   style?: ViewStyle;
   offset?: IOffset;
@@ -53,14 +53,19 @@ export interface IFinalPoleResult extends IPole {
   end?: ICoordinate;
 }
 
-export type PolygonType = 'triangle' | 'tetragon' | 'pentagon' | 'hexagon';
+export type PolygonType =
+  | 'triangle'
+  | 'tetragon'
+  | 'pentagon'
+  | 'hexagon';
 
 export interface ICoordinatePoleArgs {
   array: Array<IPole>;
   length: number;
 }
 
-export interface ICoordinateScoreArgs extends ICoordinatePoleArgs {
+export interface ICoordinateScoreArgs
+  extends ICoordinatePoleArgs {
   multiplier: number;
 }
 
@@ -81,4 +86,9 @@ export interface IUseComponentSizeResult {
   size?: number;
   offset?: IOffset;
   onLayout: (event: LayoutChangeEvent) => void;
+}
+
+export interface IInfoLayerProps {
+  info: Array<IFinalPoleResult>;
+  overallOffset: IOffset;
 }

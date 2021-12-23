@@ -28,16 +28,25 @@ export const coordinateScorePoles = ({
 
     switch (i) {
       case 0:
-        return { ...v, end: { x: length, y: length * (1 - score) } };
+        return {
+          ...v,
+          end: { x: length, y: length * (1 - score) },
+        };
       case 1:
         return {
           ...v,
-          end: { x: length * (1 - score), y: length * (1 + score) },
+          end: {
+            x: length * (1 - score),
+            y: length * (1 + score),
+          },
         };
       case 2:
         return {
           ...v,
-          end: { x: length * (1 + score), y: length * (1 + score) },
+          end: {
+            x: length * (1 + score),
+            y: length * (1 + score),
+          },
         };
       default:
         return { ...v };

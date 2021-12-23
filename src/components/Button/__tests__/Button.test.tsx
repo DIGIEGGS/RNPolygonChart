@@ -8,7 +8,9 @@ test('renders correctly', async () => {
   const buttonType: PolygonType = 'triangle';
   const text = getButtonText(buttonType);
 
-  const { getByText } = render(<Button onPress={() => {}} type={buttonType} />);
+  const { getByText } = render(
+    <Button onPress={() => {}} type={buttonType} />,
+  );
 
   const button = getByText(text);
 
@@ -19,7 +21,9 @@ test('onPress works correctly', async () => {
   const onPressFunction = jest.fn();
   const buttonType: PolygonType = 'triangle';
 
-  const { getByText } = render(<Button onPress={onPressFunction} type={buttonType} />);
+  const { getByText } = render(
+    <Button onPress={onPressFunction} type={buttonType} />,
+  );
 
   const button = getByText(getButtonText(buttonType));
 
