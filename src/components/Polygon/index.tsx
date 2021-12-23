@@ -8,6 +8,7 @@ import {
 } from '../../functions/utility';
 import { black } from '../../style/colors';
 import { IGenericChartProps } from '../../types';
+import InfoLayer from '../InfoLayer';
 import styles from './styles';
 
 export default function Polygon({
@@ -21,8 +22,12 @@ export default function Polygon({
 }: IGenericChartProps) {
   const { size, offset, onLayout } = useComponentSize();
   const [multiplier, setMultiplier] = useState<number>(0);
-  const [animValue, setAnimValue] = useState<Animated.Value>(new Animated.Value(0));
-  const animation = animationInput && useAnimation({ ...animationInput, value: animValue });
+  const [animValue, setAnimValue] = useState<Animated.Value>(
+    new Animated.Value(0),
+  );
+  const animation =
+    animationInput &&
+    useAnimation({ ...animationInput, value: animValue });
 
   useEffect(() => {
     if (size) {
@@ -45,7 +50,10 @@ export default function Polygon({
     type,
   );
 
-  const coordinateGuidePoles = useCoordinateGuidePoles({ array: poles, length: size ?? 0 }, type);
+  const coordinateGuidePoles = useCoordinateGuidePoles(
+    { array: poles, length: size ?? 0 },
+    type,
+  );
 
   const coordinateGuideInfos = useCoordinateGuidePoles(
     { array: poles, length: (size ?? 0) / 2 },
@@ -53,8 +61,12 @@ export default function Polygon({
   );
 
   return (
-    <View style={[styles.container, style]} onLayout={onLayout} testID="test-container">
-      {size && size !== Infinity && (
+    <View
+      style={[styles.container, style]}
+      onLayout={onLayout}
+      testID="test-container"
+    >
+      {size && size !== Number.POSITIVE_INFINITY && (
         <Svg viewBox={`0 0 ${size * 2} ${size * 2}`}>
           {generateLines(coordinateGuidePoles, size, 'guide')}
           {generateLines(coordinateScorePoles, size, 'score')}
@@ -66,7 +78,12 @@ export default function Polygon({
           />
         </Svg>
       )}
-      {size && size !== Infinity && generateInfo(coordinateGuideInfos, offset ?? { x: 0, y: 0 })}
+      {size && size !== Number.POSITIVE_INFINITY && (
+        <InfoLayer
+          info={coordinateGuideInfos}
+          overallOffset={offset ?? { x: 0, y: 0 }}
+        />
+      )}
     </View>
   );
 }
