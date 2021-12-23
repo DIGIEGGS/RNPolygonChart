@@ -18,13 +18,13 @@ Customizable and animatable polygon chart.
 ## Installation
 
 ```
-npm install react-native-svg react-native-polygon-chart
+npm install react-native-svg @digieggs/rn-polygon-chart
 ```
 
 or
 
 ```
-yarn add react-native-svg react-native-polygon-chart
+yarn add react-native-svg @digieggs/rn-polygon-chart
 ```
 
 #### Additional steps
