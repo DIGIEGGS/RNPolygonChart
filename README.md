@@ -1,5 +1,7 @@
 # React Native Polygon Chart
 
+Check out the medium article about our package: https://medium.com/digieggs/visualizing-multiple-percentages-as-polygons-react-native-polygon-chart-939d360a5bd1
+
 [![DIGIEGGS - RNPolygonChart](https://img.shields.io/static/v1?label=DIGIEGGS&message=RNPolygonChart&color=blue&logo=github)](https://github.com/DIGIEGGS/RNPolygonChart 'Go to GitHub repo')
 [![stars - RNPolygonChart](https://img.shields.io/github/stars/DIGIEGGS/RNPolygonChart?style=social)](https://github.com/DIGIEGGS/RNPolygonChart)
 [![forks - RNPolygonChart](https://img.shields.io/github/forks/DIGIEGGS/RNPolygonChart?style=social)](https://github.com/DIGIEGGS/RNPolygonChart)
