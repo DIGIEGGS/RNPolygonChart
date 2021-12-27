@@ -13,9 +13,9 @@ Customizable and animatable polygon chart.
 
 ## Getting started
 
-- This component is not supported in the managed workflow for expo for the time being.
-
 ## Installation
+
+#### React Native CLI
 
 ```
 npm install react-native-svg @digieggs/rn-polygon-chart
@@ -25,6 +25,13 @@ or
 
 ```
 yarn add react-native-svg @digieggs/rn-polygon-chart
+```
+
+#### Expo CLI
+
+```
+expo install react-native-svg
+expo install @digieggs/rn-polygon-chart
 ```
 
 #### Additional steps
@@ -46,7 +53,12 @@ No additional steps needed
 #### Import
 
 ```javascript
-import { Hexagon, Pentagon, Tetragon, Triangle } from 'react-native-polygon-chart';
+import {
+  Hexagon,
+  Pentagon,
+  Tetragon,
+  Triangle,
+} from 'react-native-polygon-chart';
 ```
 
 #### Usage
