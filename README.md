@@ -1,5 +1,7 @@
 # React Native Polygon Chart
 
+Check out the medium article about our package: https://medium.com/digieggs/visualizing-multiple-percentages-as-polygons-react-native-polygon-chart-939d360a5bd1
+
 [![DIGIEGGS - RNPolygonChart](https://img.shields.io/static/v1?label=DIGIEGGS&message=RNPolygonChart&color=blue&logo=github)](https://github.com/DIGIEGGS/RNPolygonChart 'Go to GitHub repo')
 [![stars - RNPolygonChart](https://img.shields.io/github/stars/DIGIEGGS/RNPolygonChart?style=social)](https://github.com/DIGIEGGS/RNPolygonChart)
 [![forks - RNPolygonChart](https://img.shields.io/github/forks/DIGIEGGS/RNPolygonChart?style=social)](https://github.com/DIGIEGGS/RNPolygonChart)
@@ -13,9 +15,9 @@ Customizable and animatable polygon chart.
 
 ## Getting started
 
-- This component is not supported in the managed workflow for expo for the time being.
-
 ## Installation
+
+#### React Native CLI
 
 ```
 npm install react-native-svg @digieggs/rn-polygon-chart
@@ -25,6 +27,13 @@ or
 
 ```
 yarn add react-native-svg @digieggs/rn-polygon-chart
+```
+
+#### Expo CLI
+
+```
+expo install react-native-svg
+expo install @digieggs/rn-polygon-chart
 ```
 
 #### Additional steps
@@ -46,7 +55,12 @@ No additional steps needed
 #### Import
 
 ```javascript
-import { Hexagon, Pentagon, Tetragon, Triangle } from 'react-native-polygon-chart';
+import {
+  Hexagon,
+  Pentagon,
+  Tetragon,
+  Triangle,
+} from 'react-native-polygon-chart';
 ```
 
 #### Usage
